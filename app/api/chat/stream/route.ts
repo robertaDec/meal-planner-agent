@@ -26,10 +26,10 @@ export async function POST(req: Request) {
             controller.close();
         }
     })
-return new Response( readable, {
-    headers: {
-      'Content-Type': 'text/plain; charset=utf-8',
-      'Cache-Control': 'no-cache',
-    },
-})
+    return new Response( readable, {
+        headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+        'Cache-Control': 'no-cache',
+        },
+    })
 }
