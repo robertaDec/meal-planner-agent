@@ -1,9 +1,11 @@
 import Anthropic from "@anthropic-ai/sdk";
+import { text } from "stream/consumers";
 
 const antrophic = new Anthropic();
 
 export async function POST(req: Request){
     const {message} = await req.json();
+
     const tools: Anthropic.Tool[] = [
         {
             name: 'get_current_time',
@@ -14,57 +16,64 @@ export async function POST(req: Request){
             }
         }
     ]
-    const firstResponse = await antrophic.messages.create({
-        model: "claude-sonnet-4-5",
-        max_tokens: 1024,
-        tools,
-        messages: [{role: 'user', content: message}],
-    })
 
-    console.log("Turn one response:", JSON.stringify(firstResponse, null, 2));
+    const messages: Anthropic.MessageParam[] = [
+        { role: 'user', content: message}
+    ];
 
-    if(firstResponse.stop_reason !== 'tool_use'){
-        const text = firstResponse.content[0].type === 'text' ? firstResponse.content[0].text : '';
-        return Response.json({text});
-    }
+    const MAX_TURNS = 6;
+    let finalText = '';
 
-    const toolUseBlock = firstResponse.content.find((b) => b.type === 'tool_use');
-    if(!toolUseBlock || toolUseBlock.type !== 'tool_use'){
-        return Response.json({test: "No tool use block found, unexpected"});
-    }
+    for (let turn = 0; turn < MAX_TURNS; turn++){
+        const response = await antrophic.messages.create({
+            model: 'claude-sonnet-4-5',
+            max_tokens: 1024,
+            tools,
+            messages,
+        })
+        console.log(`Turn ${turn +1}:`, response.stop_reason, response.content.map(b => b.type));
 
-    console.log('Claude asked to call:', toolUseBlock.name, 'with input:', toolUseBlock.input )
+        //if Claude gave a text answer we are done 
+        if(response.stop_reason === 'end_turn'){
+            const textBlock = response.content.find(b => b.type === 'text');
+            finalText = textBlock && textBlock.type === 'text' ? textBlock.text : '';
+            break;
+        }
 
-    let toolResult: string;
+        //Otherwise claude want s to use one or more tools.
+        if(response.stop_reason === 'tool_use'){
+            messages.push({ role: 'assistant', content: response.content });
 
-    if(toolUseBlock.name === 'get_current_time'){
-        toolResult = new Date().toString();
-    } else {
-        toolResult = `Unknown tool: ${toolUseBlock.name}`;
-    }
-    console.log('Tool result', toolResult)
+            //Run every tool_use block in this response and collect the results
+            const toolResult: Anthropic.ToolResultBlockParam[] = [];
 
-    const secondResoponse = await antrophic.messages.create({
-        model: 'claude-sonnet-4-5',
-        max_tokens: 1024,
-        tools,
-        messages: [
-            { role: 'user', content: message },
-            { role: 'assistant', content: firstResponse.content },
-            {
-                role: 'user',
-                content: [
-                    {
-                        type: 'tool_result',
-                        tool_use_id: toolUseBlock.id,
-                        content: toolResult,
-                    }
-                ]
+            for(const block of response.content){
+                if(block.type !== 'tool_use') continue;
+
+                console.log('Executing tool:', block.name, 'with input:', block.input);
+
+                let result: string;
+                if(block.name === 'get_current_time'){
+                    result = new Date().toString();
+                } else {
+                    result = `Unknown tool: ${block.name}`;
+                }
+
+                console.log('Tool result:', result);
+
+                toolResult.push({
+                    type: 'tool_result',
+                    tool_use_id: block.id,
+                    content: result,
+                })
             }
-        ]
-    });
-    console.log('Turn 2 response', JSON.stringify(secondResoponse, null, 2));
-
-    const finalText = secondResoponse.content[0].type === 'text' ? secondResoponse.content[0].text : '';
-    return Response.json({text: finalText});
+            //Send all tool results back in a single user message.
+            messages.push({ role: 'user', content: toolResult });
+            continue;
+        }
+        //Anything else (max_token hit, refusal, etc) bail out
+        console.log('Unexpected stop_reason:', response.stop_reason);
+        break;
+    }
+    return Response.json({ text: finalText });
 }
