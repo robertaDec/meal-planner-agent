@@ -1,4 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
+import { COOK_SYSTEM_PROMPT_V1 } from '@/lib/prompts';
 
 const anthropic = new Anthropic();
 
@@ -30,6 +31,7 @@ export async function POST(req: Request) {
           const modelStream = await anthropic.messages.stream({
             model: 'claude-sonnet-4-5',
             max_tokens: 1024,
+            system: COOK_SYSTEM_PROMPT_V1,
             tools,
             messages,
           });
