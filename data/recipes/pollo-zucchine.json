@@ -1,0 +1,40 @@
+{
+  "slug": "pollo-zucchine",
+  "title_en": "Chicken with zucchini cream",
+  "title_it": "Pollo in crema di zucchine",
+  "description_en": "An easy and nutrient rich way to enjoy chicken cooked in a pan",
+  "description_it": "Un modo semplice e nutriente per gustare il pollo in padella",
+  "ingredients": [
+    { "name_en": "chicken", "name_it": "pollo", "amount": 600, "unit": "g" },
+    { "name_en": "onion", "name_it": "cipolla", "amount": 0.5, "unit": "medium" },
+    { "name_en": "zucchini", "name_it": "zucchine", "amount": 2, "unit": "medium" },
+    { "name_en": "rice or wheat flour", "name_it": "farina di riso o grano", "amount": 2, "unit": "tbs", "optional": true },
+    { "name_en": "oil", "name_it": "olio", "amount": 1, "unit": "tbsp" },
+    { "name_en": "salt", "name_it": "sale", "amount": null, "unit": null }
+  ],
+  "steps_en": [
+   "Warm the oil in a pan and lightly sauté the thinly sliced onion.",
+    "After a few minutes, add the diced zucchini, a pinch of salt, and cover. Cook on low heat for 20-30 minutes.",
+    "Meanwhile, dice the chicken and dredge it in the flour.",
+    "Cook the chicken in a pan with a drizzle of oil and salt to taste.",
+    "When the chicken is about medium-cooked, remove it from the heat.",
+    "Once the zucchini are soft, blend them with the onion using an immersion blender.",
+    "Combine the zucchini cream and the chicken in one pan and let everything cook together for a few more minutes to bring the flavors together.",
+    "Serve hot."
+  ],
+  "steps_it": [
+    "Scaldare l'olio in padella e far soffriggere leggermente la cipolla tagliata a fettine sottili",
+    "Dopo qualche minuto aggiungere le zucchine tagliate a cubetti, aggiungere un po' di sale e far cuocere con coperchio per circa 20-30 min a fuoco lento",
+    "Nel frattempo tagliare il pollo a cubetti e passarlo nella farina",
+    "Cuocere in una padella con un filo d'olio e sale a piacere",
+    "A cottura medio-cotta del pollo rimuoverlo dal fuoco.",
+    "Tritare con frullatore ad immersione cipolla e zucchine quando saranno morbide",
+    "Unire la crema di zucchine e il pollo in una sola padella e lasciar cuocere ed insaporire per qualche minuto",
+    "Servire caldo"
+  ],
+  "total_minutes": 40,
+  "active_minutes": 20,
+  "servings": 4,
+  "tags": ["chicken", "vegetables", "one-pan", "kid-friendly", "family", "weeknight", "italian", "healthy"],
+  "source": "family"
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "brodo-di-pollo",
+  "title_en": "Chicken soup",
+  "title_it": "Brodo di pollo",
+  "description_en": "A basic traditional dish for cozy and healing meal - enjoy the chicken or the vegetables as a side or the broth with pasta.",
+  "description_it": "Un piatto tradizionale semplice per un pasto accogliente e curativo - gusta il pollo o le verdure come contorno, oppure il brodo con la pasta.",
+  "ingredients": [
+    { "name_en": "chicken", "name_it": "pollo", "amount": 600, "unit": "g" },
+    { "name_en": "water", "name_it": "acqua", "amount": 1.5, "unit": "l" },
+    { "name_en": "onion", "name_it": "cipolla", "amount": 1, "unit": "medium" },
+    { "name_en": "carrots", "name_it": "carote", "amount": 3, "unit": "medium" },
+    { "name_en": "celery", "name_it": "sedano", "amount": 3, "unit": "stick" },
+    { "name_en": "potato", "name_it": "patata", "amount": 2, "unit": "medium", "optional": true },
+    { "name_en": "kale", "name_it": "cavolo nero", "amount": 3, "unit": "leaves", "optional": true },
+    { "name_en": "turmeric", "name_it": "curcuma", "amount": 1, "unit": "tsp", "optional": true },
+    { "name_en": "ginger", "name_it": "zenzero", "amount": 1, "unit": "tsp", "optional": true },
+    { "name_en": "salt", "name_it": "sale", "amount": null, "unit": null }
+  ],
+  "steps_en": [
+    "To prepare the chicken broth, start by cleaning the onions, carrots, and celery.",
+    "Place the chicken thighs and vegetables in a pot — you can remove the skin if you prefer a leaner broth.",
+    "Add the water and place the pot over low heat.",
+    "Cover and let cook for 1 hour, or up to 2 if you like it more concentrated.",
+    "When the broth is ready, remove the meat and vegetables.",
+    "Strain the broth through a fine-mesh sieve and salt it.",
+    "Enjoy it on its own, or use it to cook pastina or tortellini."
+  ],
+  "steps_it": [
+    "Per preparare il brodo di pollo per prima cosa dedicatevi alla pulizia di cipolle, carote e sedano.",
+    "In una pentola mettete le cosce di pollo con verdure, potete decidere di togliere la pelle se preferite un brodo meno grasso.",
+    "Versate l’acqua e mettete la pentola sul fuoco a calore basso.",
+    "Aggiungete un coperchio e lasciate cuocere per 1 ora o anche 2 se piace piú denso.",
+    "Quando il brodo sarà pronto, potete scolare la carne e le verdure.",
+    "Filtrate il brodo di pollo con un colino a maglie strette e salatelo.",
+    "Potete gustarlo da solo oppure utilizzarlo per cuocere la pastina o tortellini"
+  ],
+  "total_minutes": 90,
+  "active_minutes": 15,
+  "servings": 4,
+  "tags": ["soup", "chicken", "broth", "comfort-food", "healing", "italian", "family", "weekend"],
+  "source": "family"
+}

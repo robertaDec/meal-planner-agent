@@ -1,0 +1,43 @@
+{
+  "slug": "ricci-con-la-ricotta",
+  "title_en": "Ricci Pasta with Ricotta",
+  "title_it": "Ricci con la ricotta",
+  "description_en": "An easy dish from the Neapolitan kitchen that combines a first and second meal (carbs and protein).",
+  "description_it": "Un semplice piatto della cucina napoletana che combina primo e secondo (carboidrati e proteine).",
+  "ingredients": [
+    { "name_en": "pasta", "name_it": "pasta", "amount": 320, "unit": "g" },
+    { "name_en": "tomato sauce", "name_it": "passata di pomodoro", "amount": 400, "unit": "ml" },
+    { "name_en": "ricotta cheese", "name_it": "ricotta", "amount": 300, "unit": "g" },
+    { "name_en": "garlic", "name_it": "aglio", "amount": 1, "unit": "clove", "optional": true },
+    { "name_en": "basil", "name_it": "basilico", "amount": 6, "unit": "leaves", "optional": true },
+    { "name_en": "olive oil", "name_it": "olio extravergine di oliva", "amount": null, "unit": null },
+    { "name_en": "salt", "name_it": "sale", "amount": null, "unit": null }
+  ],
+  "steps_en": [
+    "Prepare the tomato sauce: if using canned whole or crushed tomatoes, blend them with an immersion blender.",
+    "In a pan, gently sauté the garlic clove in extra virgin olive oil, add the tomato, and let it cook.",
+    "Salt, then add fresh basil.",
+    "Meanwhile, cook the pasta in plenty of salted water.",
+    "In a large bowl, combine the ricotta with a couple of ladlefuls of tomato sauce.",
+    "Stir to a creamy consistency.",
+    "Reserve a bit of pasta water in case you want to adjust the creaminess.",
+    "Drain the pasta and add it to the sauce in the bowl.",
+    "Toss to combine, adding pasta water for more or less creaminess, and more sauce if you'd like it richer."
+  ],
+  "steps_it": [
+    "Prepara il sugo di pomodoro: se usi i pelati o la polpa, frullalo usando un minipimer.",
+    "In un tegame fai soffriggere appena lo spicchio di aglio con l'olio extravergine di oliva, aggiungi il pomodoro e fai cuocere.",
+    "Poi sala e, infine, unisci anche il basilico fresco.",
+    "Intanto cuoci la pasta in abbondante acqua salata.",
+    "In una ciotola capiente, metti la ricotta e un paio di mestoli di sugo di pomodoro.",
+    "Mescola per ottenere una crema.",
+    "Conserva un po' di acqua di cottura se vorrai regolare la cremosità della pasta.",
+    "Scola la pasta e uniscila al condimento nella ciotola.",
+    "Mescola per amalgamare e aggiungi dell'acqua se la gradisci più o meno cremosa, così come il sugo di pomodoro se la vorrai più condita."
+  ],
+  "total_minutes": 20,
+  "active_minutes": 15,
+  "servings": 4,
+  "tags": ["pasta", "quick", "vegetarian", "italian", "family", "kid-friendly", "ricotta", "weeknight"],
+  "source": "family"
+}

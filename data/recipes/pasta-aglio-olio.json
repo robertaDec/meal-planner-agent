@@ -1,0 +1,36 @@
+{
+  "slug": "pasta-aglio-olio",
+  "title_en": "Pasta with Garlic and Oil",
+  "title_it": "Pasta aglio e olio",
+  "description_en": "The classic late-night Italian pasta. 4 ingredients, 15 minutes, no excuses.",
+  "description_it": "Il classico spaghetto di mezzanotte. 4 ingredienti, 15 minuti, niente scuse.",
+  "ingredients": [
+    { "name_en": "spaghetti", "name_it": "spaghetti", "amount": 320, "unit": "g" },
+    { "name_en": "garlic", "name_it": "aglio", "amount": 4, "unit": "cloves" },
+    { "name_en": "extra virgin olive oil", "name_it": "olio extra vergine d'oliva", "amount": 80, "unit": "ml" },
+    { "name_en": "red pepper flakes", "name_it": "peperoncino", "amount": 1, "unit": "tsp", "optional": true },
+    { "name_en": "parsley", "name_it": "prezzemolo", "amount": 1, "unit": "handful", "optional": true },
+    { "name_en": "salt", "name_it": "sale", "amount": null, "unit": null }
+  ],
+  "steps_en": [
+    "Bring a large pot of well-salted water to a boil and cook spaghetti until al dente.",
+    "While pasta cooks, slice garlic thinly and warm gently in olive oil over low heat until just golden — don't burn it.",
+    "Add red pepper flakes off the heat.",
+    "Reserve a cup of pasta water, then drain spaghetti and add to the pan.",
+    "Toss vigorously with a splash of pasta water to emulsify the sauce.",
+    "Finish with parsley and serve immediately."
+  ],
+  "steps_it": [
+    "Portare a bollore una pentola d'acqua salata e cuocere gli spaghetti al dente.",
+    "Mentre la pasta cuoce, affettare l'aglio sottile e scaldarlo dolcemente nell'olio a fuoco basso fino a doratura — non bruciarlo.",
+    "Aggiungere il peperoncino fuori dal fuoco.",
+    "Conservare un mestolo di acqua di cottura, scolare gli spaghetti e versarli in padella.",
+    "Saltare energicamente con un po' di acqua di cottura per emulsionare la salsa.",
+    "Completare con il prezzemolo e servire subito."
+  ],
+  "total_minutes": 15,
+  "active_minutes": 10,
+  "servings": 4,
+  "tags": ["quick", "vegetarian", "pantry-staple", "italian"],
+  "source": "family"
+}
