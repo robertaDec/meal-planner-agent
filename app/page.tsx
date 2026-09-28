@@ -82,20 +82,62 @@ export default function Home() {
   }
   return (
     <main style={{ maxWidth: 640, margin: '2rem auto', padding: '1rem' }}>
-      <h1>Chat with Claude</h1>
+      <header style={{ marginBottom: '2rem' }}>
+        <h1
+          style={{
+            fontSize: '2rem',
+            fontWeight: 600,
+            margin: 0,
+            letterSpacing: '-0.02em',
+          }}
+        >
+          Meal Planner
+        </h1>
+        <p
+          style={{
+            margin: '0.5rem 0 0',
+            color: '#78716c',
+            fontSize: '1rem',
+          }}
+        >
+          Cook well with what you've got.
+        </p>
+      </header>
       <textarea
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        placeholder="Ask something"
+        placeholder="What's a quick dinner idea?"
         rows={3}
-        style={{ width: '100%', padding: '0.5rem', fontSize: '1rem' }}
+        style={{
+          width: '100%',
+          padding: '0.75rem 0.9rem',
+          fontSize: '1rem',
+          fontFamily: 'inherit',
+          border: '1px solid #d6d3d1',
+          borderRadius: 8,
+          resize: 'vertical',
+          boxSizing: 'border-box',
+          outline: 'none',
+          lineHeight: 1.5,
+        }}
       />
       <button
         onClick={handleSubmit}
         disabled={loading || !message.trim()}
-        style={{ marginTop: '0.5rem', padding: '0.5rem 1rem' }}
+        style={{
+          marginTop: '0.75rem',
+          padding: '0.6rem 1.25rem',
+          fontSize: '0.95rem',
+          fontWeight: 500,
+          background: loading || !message.trim() ? '#a8a29e' : '#1c1917',
+          color: 'white',
+          border: 'none',
+          borderRadius: 8,
+          cursor: loading || !message.trim() ? 'not-allowed' : 'pointer',
+          transition: 'background 0.15s ease',
+        }}
       >
-        {loading ? 'Thinking...' : 'Send'}
+        {loading ? 'Thinking...' : 'Ask'}
       </button>
       {toolCalls.length > 0 && (
         <section style={{ marginTop: '1.5rem' }}>
@@ -105,12 +147,14 @@ export default function Home() {
               <li
                 key={i}
                 style={{
-                  padding: '0.4rem 0.7rem',
-                  marginBottom: '0.25rem',
-                  borderRadius: 6,
+                  padding: '0.5rem 0.8rem',
+                  marginBottom: '0.35rem',
+                  borderRadius: 8,
                   fontSize: '0.9rem',
-                  background: t.status === 'running' ? '#fef3c7' : '#dcfce7',
-                  border: `1px solid ${t.status === 'running' ? '#fbbf24' : '#86efac'}`,
+                  background: t.status === 'running' ? '#fef9c3' : '#f0fdf4',
+                  color: t.status === 'running' ? '#854d0e' : '#166534',
+                  border: `1px solid ${t.status === 'running' ? '#fde68a' : '#bbf7d0'}`,
+                  transition: 'background 0.2s ease, color 0.2s ease, border 0.2s ease',
                 }}
               >
                 <strong>{t.name}</strong>
@@ -126,11 +170,13 @@ export default function Home() {
           style={{
             marginTop: '1.5rem',
             whiteSpace: 'pre-wrap',
-            padding: '1rem',
-            background: '#fafafa',
-            border: '1px solid #e5e5e5',
-            borderRadius: 6,
-            lineHeight: 1.6,
+            padding: '1.25rem',
+            background: 'white',
+            border: '1px solid #e7e5e4',
+            borderRadius: 10,
+            lineHeight: 1.65,
+            fontSize: '1rem',
+            color: '#1c1917',
           }}
         >
           {response}
