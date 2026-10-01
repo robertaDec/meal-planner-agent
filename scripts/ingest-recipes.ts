@@ -13,7 +13,7 @@
 import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { supabase } from "../lib/supabase";
-import { embed, EMBED_MODEL, embedOne } from "../lib/voyage";
+import { embed, EMBED_MODEL } from "../lib/voyage";
 
 type RecipeFile = {
   slug: string;

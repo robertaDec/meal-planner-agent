@@ -100,13 +100,13 @@ export default function Home() {
             fontSize: '1rem',
           }}
         >
-          Cook well with what you've got.
+          Cook with what is already in the kitchen.
         </p>
       </header>
       <textarea
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        placeholder="What's a quick dinner idea?"
+        placeholder="What is a quick dinner idea?"
         rows={3}
         style={{
           width: '100%',

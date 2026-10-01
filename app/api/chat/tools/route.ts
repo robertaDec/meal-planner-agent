@@ -1,5 +1,4 @@
 import Anthropic from '@anthropic-ai/sdk';
-import { text } from 'stream/consumers';
 
 const antrophic = new Anthropic();
 
