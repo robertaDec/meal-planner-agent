@@ -63,6 +63,7 @@ export default function Home() {
             setToolCalls((prev) => {
               const next = [...prev];
               for (let i = next.length - 1; i >= 0; i--) {
+                // eslint-disable-next-line react/no-unescaped-entities
                 if (next[i].name === event.name && next[i].status === 'running') {
                   next[i] = { ...next[i], status: 'done', summary: event.summary };
                   break;
