@@ -106,7 +106,7 @@ export default function Home() {
       <textarea
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        placeholder="What's a quick dinner idea?"
+        placeholder="What is a quick dinner idea?"
         rows={3}
         style={{
           width: '100%',
